@@ -6,6 +6,8 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getTheme } from './utils/theme';
 import ProtectedRoute from './routes/ProtectedRoute';
 import AppLayout from './components/layout/AppLayout';
@@ -49,6 +51,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <ToastContainer position="top-right" autoClose={4000} theme={mode} />
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />

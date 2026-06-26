@@ -49,7 +49,7 @@ export default function SettingsPage({ onToggleTheme, mode }) {
 
       <Grid container spacing={3}>
         {/* Profile */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
@@ -77,7 +77,7 @@ export default function SettingsPage({ onToggleTheme, mode }) {
         </Grid>
 
         {/* Password */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={700} sx={{ mb: 2.5 }}>Change Password</Typography>
@@ -93,7 +93,7 @@ export default function SettingsPage({ onToggleTheme, mode }) {
         </Grid>
 
         {/* Appearance */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>Appearance</Typography>
@@ -111,7 +111,7 @@ export default function SettingsPage({ onToggleTheme, mode }) {
         </Grid>
 
         {/* App Info */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>About WealthOS</Typography>

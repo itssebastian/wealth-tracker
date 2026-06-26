@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Box, Card, CardContent, Typography, TextField, Button, Link, Alert,
+  Box, Card, CardContent, Typography, TextField, Button, Link,
 } from '@mui/material';
 import { AccountBalance } from '@mui/icons-material';
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useAuthStore from '../../store/authStore';
 
 export default function LoginPage() {
-  const { login, loading, error } = useAuthStore();
+  const { login, loading } = useAuthStore();
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (vals) => {
     const ok = await login(vals.email, vals.password);
-    if (ok) navigate('/dashboard');
+    if (ok) {
+      navigate('/dashboard');
+    } else {
+      toast.error(useAuthStore.getState().error || 'Login failed');
+    }
   };
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #0D0F14 0%, #151820 100%)', p: 2 }}>
       <Card sx={{ width: '100%', maxWidth: 420 }}>
         <CardContent sx={{ p: 4 }}>
-          {/* Logo */}
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 4 }}>
             <Box sx={{ width: 56, height: 56, borderRadius: 3, background: 'linear-gradient(135deg, #6C63FF 0%, #00D9A3 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1.5 }}>
               <AccountBalance sx={{ color: '#fff', fontSize: 28 }} />
@@ -32,9 +36,7 @@ export default function LoginPage() {
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Sign in to your account</Typography>
           </Box>
 
-          {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <TextField
                 label="Email"
@@ -69,7 +71,6 @@ export default function LoginPage() {
             </Typography>
           </Box>
 
-          {/* Demo hint */}
           <Box sx={{ mt: 2, p: 1.5, borderRadius: 2, bgcolor: 'action.hover', textAlign: 'center' }}>
             <Typography variant="caption" color="text.secondary">
               Demo: <strong>demo@wealthtracker.in</strong> / <strong>Demo@1234</strong>

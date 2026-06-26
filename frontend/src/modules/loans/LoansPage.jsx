@@ -137,7 +137,7 @@ export default function LoansPage() {
 
       <Grid container spacing={2.5}>
         {/* Loan cards */}
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             {loans.length === 0 ? (
               <Card sx={{ p: 3, textAlign: 'center' }}>
@@ -152,7 +152,7 @@ export default function LoansPage() {
 
         {/* Detail panel */}
         {sl && (
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Card>
               <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2, flexWrap: 'wrap', gap: 1 }}>
@@ -173,7 +173,7 @@ export default function LoansPage() {
                     { label: 'Principal Paid', value: formatCurrency(sl.totalPrincipalPaid), color: 'primary.main' },
                     { label: 'EMI/Month', value: formatCurrency(sl.emiAmount), color: 'text.primary' },
                   ].map(s => (
-                    <Grid item xs={6} sm={4} key={s.label}>
+                    <Grid size={{ xs: 6, sm: 4 }} key={s.label}>
                       <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: 'action.hover' }}>
                         <Typography variant="caption" color="text.secondary">{s.label}</Typography>
                         <Typography fontWeight={700} color={s.color}>{s.value}</Typography>

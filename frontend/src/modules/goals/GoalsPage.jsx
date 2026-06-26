@@ -64,7 +64,7 @@ export default function GoalsPage() {
 
       <Grid container spacing={2.5}>
         {goals.length === 0 && (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card sx={{ p: 4, textAlign: 'center' }}>
               <Flag sx={{ fontSize: 48, color: 'text.disabled', mb: 1 }} />
               <Typography color="text.secondary">No goals yet. Set your first financial goal!</Typography>
@@ -77,7 +77,7 @@ export default function GoalsPage() {
           const color = GOAL_COLORS[goal.goalType] || '#6C63FF';
           const remaining = parseFloat(goal.targetAmount) - parseFloat(goal.currentAmount);
           return (
-            <Grid item xs={12} sm={6} md={4} key={goal.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={goal.id}>
               <Card sx={{ height: '100%', borderTop: `3px solid ${color}` }}>
                 <CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>

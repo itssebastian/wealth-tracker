@@ -67,27 +67,54 @@ export default function Dashboard() {
 
       {/* Summary Cards */}
       <Grid container spacing={2} sx={{ mb: 2.5 }}>
-        <Grid item xs={6} sm={6} md={3}>
-          <StatCard title="Savings" value={formatCurrency(summary?.totalSavings)} icon={<Savings />}
-            gradient="linear-gradient(135deg, #6C63FF, #5A52D5)" loading={loading} subtitle="All accounts" />
-        </Grid>
-        <Grid item xs={6} sm={6} md={3}>
-          <StatCard title="Fixed Deposits" value={formatCurrency(summary?.totalFD)} icon={<AccountBalance />}
-            gradient="linear-gradient(135deg, #00D9A3, #00A87E)" loading={loading} subtitle="Maturity value" />
-        </Grid>
-        <Grid item xs={6} sm={6} md={3}>
-          <StatCard title="Gold" value={formatCurrency(summary?.totalGold)} icon={<Diamond />}
-            gradient="linear-gradient(135deg, #FFB347, #FF8C00)" loading={loading} subtitle="Current price" />
-        </Grid>
-        <Grid item xs={6} sm={6} md={3}>
-          <StatCard title="Silver" value={formatCurrency(summary?.totalSilver)} icon={<Inventory2 />}
-            gradient="linear-gradient(135deg, #8B8FA8, #6B6F88)" loading={loading} subtitle="Current price" />
-        </Grid>
-      </Grid>
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+    <StatCard
+      title="Savings"
+      value={formatCurrency(summary?.totalSavings)}
+      icon={<Savings />}
+      gradient="linear-gradient(135deg, #6C63FF, #5A52D5)"
+      loading={loading}
+      subtitle="All accounts"
+    />
+  </Grid>
+
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+    <StatCard
+      title="Fixed Deposits"
+      value={formatCurrency(summary?.totalFD)}
+      icon={<AccountBalance />}
+      gradient="linear-gradient(135deg, #00D9A3, #00A87E)"
+      loading={loading}
+      subtitle="Maturity value"
+    />
+  </Grid>
+
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+    <StatCard
+      title="Gold"
+      value={formatCurrency(summary?.totalGold)}
+      icon={<Diamond />}
+      gradient="linear-gradient(135deg, #FFB347, #FF8C00)"
+      loading={loading}
+      subtitle="Current price"
+    />
+  </Grid>
+
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+    <StatCard
+      title="Silver"
+      value={formatCurrency(summary?.totalSilver)}
+      icon={<Inventory2 />}
+      gradient="linear-gradient(135deg, #8B8FA8, #6B6F88)"
+      loading={loading}
+      subtitle="Current price"
+    />
+  </Grid>
+</Grid>
 
       {/* Net Worth + Allocation + Loans */}
       <Grid container spacing={2} sx={{ mb: 2.5 }}>
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%', background: 'linear-gradient(145deg, rgba(108,99,255,0.15) 0%, rgba(0,217,163,0.07) 100%)', border: '1px solid rgba(108,99,255,0.2)' }}>
             <CardContent sx={{ p: 2.5 }}>
               <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
@@ -111,7 +138,7 @@ export default function Dashboard() {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ p: 2.5 }}>
               <Typography variant="subtitle2" fontWeight={700} sx={{ mb: 0.5 }}>Asset Allocation</Typography>
@@ -134,7 +161,7 @@ export default function Dashboard() {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ p: 2.5, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <Box>

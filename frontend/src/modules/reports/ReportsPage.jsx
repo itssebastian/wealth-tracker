@@ -53,7 +53,7 @@ export default function ReportsPage() {
 
       <Grid container spacing={2.5}>
         {/* Wealth Summary */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>Wealth Breakdown</Typography>
@@ -73,7 +73,7 @@ export default function ReportsPage() {
         </Grid>
 
         {/* Net Worth vs Assets */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>Net Worth vs Total Assets</Typography>
@@ -96,7 +96,7 @@ export default function ReportsPage() {
 
         {/* Loan Report */}
         {loanBarData.length > 0 && (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardContent>
                 <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>Loan Analysis</Typography>
@@ -119,7 +119,7 @@ export default function ReportsPage() {
 
         {/* Summary Table */}
         {summary && (
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card>
               <CardContent>
                 <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>Financial Summary</Typography>
@@ -133,7 +133,7 @@ export default function ReportsPage() {
                     { label: 'Gold', value: formatCurrency(summary.totalGold) },
                     { label: 'Silver', value: formatCurrency(summary.totalSilver) },
                   ].map(item => (
-                    <Grid item xs={6} sm={4} md={3} key={item.label}>
+                    <Grid size={{ xs: 6, sm: 4, md: 3 }} key={item.label}>
                       <Box sx={{ p: 2, borderRadius: 2, bgcolor: 'action.hover', textAlign: 'center' }}>
                         <Typography variant="caption" color="text.secondary" display="block">{item.label}</Typography>
                         <Typography fontWeight={700} color={item.color || 'text.primary'}>{item.value}</Typography>

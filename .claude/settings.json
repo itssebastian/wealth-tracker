@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E \"\\(package\\\\.json|tailwind|\\\\.css$\\)\")"
+      "Bash(grep -E \"\\(package\\\\.json|tailwind|\\\\.css$\\)\")",
+      "Bash(npm install *)"
     ]
   }
 }
